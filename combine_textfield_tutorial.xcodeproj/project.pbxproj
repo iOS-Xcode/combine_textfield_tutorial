@@ -13,6 +13,7 @@
 		B98619FB2602727400453287 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B98619F92602727400453287 /* Main.storyboard */; };
 		B98619FD2602727500453287 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B98619FC2602727500453287 /* Assets.xcassets */; };
 		B9861A002602727500453287 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B98619FE2602727500453287 /* LaunchScreen.storyboard */; };
+		B9861A092602742A00453287 /* MyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9861A082602742A00453287 /* MyViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		B98619FC2602727500453287 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B98619FF2602727500453287 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B9861A012602727500453287 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B9861A082602742A00453287 /* MyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +61,7 @@
 				B98619F32602727400453287 /* AppDelegate.swift */,
 				B98619F52602727400453287 /* SceneDelegate.swift */,
 				B98619F72602727400453287 /* ViewController.swift */,
+				B9861A082602742A00453287 /* MyViewModel.swift */,
 				B98619F92602727400453287 /* Main.storyboard */,
 				B98619FC2602727500453287 /* Assets.xcassets */,
 				B98619FE2602727500453287 /* LaunchScreen.storyboard */,
@@ -139,6 +142,7 @@
 			files = (
 				B98619F82602727400453287 /* ViewController.swift in Sources */,
 				B98619F42602727400453287 /* AppDelegate.swift in Sources */,
+				B9861A092602742A00453287 /* MyViewModel.swift in Sources */,
 				B98619F62602727400453287 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
