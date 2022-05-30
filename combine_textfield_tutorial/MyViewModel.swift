@@ -10,6 +10,7 @@ import Combine
 
 class MyViewModel {
     //published 어노테이션을 통해 구독이 가능하도록 설정.
+    //ViewController 의 텍스트필드에서 들어오는 문자 구독.
     @Published var passwordInput : String = "" {
         didSet {
             print("MyViewModel / passwordInput : \(passwordInput)")

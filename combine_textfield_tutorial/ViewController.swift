@@ -15,7 +15,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var myBtn: UIButton!
     
     var viewModel : MyViewModel!
-    
+    //메모리 관리를 위해.
     private var mySubscriptions = Set<AnyCancellable>()
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,13 +25,13 @@ class ViewController: UIViewController {
  //           .print()
             //메인 쓰레드에서 받는다.
             .receive(on: DispatchQueue.main)
-            //구독
+            //구독(KVO 방식)
             .assign(to: \.passwordInput, on: viewModel)
             .store(in: &mySubscriptions)
         
         passwordConfirmTextField.myTextPublisher
  //           .print()
-            //메인 쓰레드에서 받는다.
+            //메인 쓰레드에서 받는다. 다른 쓰레드와 같이 작업을 하는 경우
             .receive(on: RunLoop.main)
             //구독
             .assign(to: \.passwordConfirmInput, on: viewModel)
@@ -41,7 +41,7 @@ class ViewController: UIViewController {
         viewModel.isMatchPasswordInput
             .print()
             .receive(on: RunLoop.main)
-            //구독
+            //구독, isValid가 이벤트를 받음.
             .assign(to: \.isValid, on: myBtn)
             .store(in: &mySubscriptions)
     }
@@ -51,11 +51,14 @@ class ViewController: UIViewController {
 
 extension UITextField {
     var myTextPublisher : AnyPublisher<String, Never> {
+        //TextField의 노티피케이션을 가지고 옴.
         NotificationCenter.default.publisher(for: UITextField.textDidChangeNotification, object: self)
             //UITextField 가져옴.
             .compactMap{ $0.object as? UITextField }
             //String `가져옴
             .map{ $0.text ?? "" }
+            .print()
+        //Wraps this publisher with a type eraser.
             .eraseToAnyPublisher()
     }
 }
